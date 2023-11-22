@@ -1,0 +1,221 @@
+.App {
+  width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  background: #f0f0f0; /* Light gray background */
+  color: #212121;
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  place-items: center;
+  margin: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+/* @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"); */
+
+.joinChatContainer {
+  background-color: #fafafa;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.joinChatContainer h3 {
+  color: #333;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+.joinChatContainer input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.joinChatContainer button {
+  background-color: #00bcd4; /* Teal color */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.joinChatContainer button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+
+.chat-window {
+  width: 350px;
+  height: 448px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-window p {
+  margin: 0;
+}
+.chat-window .chat-header {
+  height: 50px;
+  border-radius: 10px 10px 0 0; /* Rounded corners only at the top */
+  background: #263238;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow under the header */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+}
+.chat-window .chat-header p {
+  color: #fff;
+  font-weight: 700;
+}
+
+.notify{
+  font-size: 12px;
+}
+
+.chat-window .chat-body {
+  height: calc(450px - (45px + 70px));
+  /* border: 1px solid #263238; */
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.chat-window .chat-body .message-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 10px;
+}
+
+.chat-window .chat-body .message-container::-webkit-scrollbar {
+  display: none;
+}
+.chat-window .chat-body .message {
+  height: auto;
+  padding: 10px;
+  display: flex;
+}
+
+.chat-window .chat-body .message .message-content {
+  width: auto;
+  height: auto;
+  min-height: 40px;
+  max-width: 120px;
+  background-color: #43a047;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+#you {
+  justify-content: flex-start;
+}
+
+#you .message-content {
+  justify-content: flex-start;
+}
+
+#you .message-meta {
+  justify-content: flex-start;
+  margin-left: 5px;
+}
+
+#other {
+  justify-content: flex-end;
+}
+
+#other .message-content {
+  justify-content: flex-end;
+  background-color: cornflowerblue;
+}
+
+#other .message-meta {
+  justify-content: flex-end;
+  margin-right: 5px;
+}
+
+.message-meta #author {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.chat-window .chat-body .message .message-meta {
+  display: flex;
+  font-size: 12px;
+}
+
+.chat-window .chat-footer {
+  height: 40px;
+  /* border: 1px solid #263238; */
+  border-top: none;
+  display: flex;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chat-window .chat-footer input {
+  height: 100%;
+  flex: 85%;
+  border: 1;
+  padding: 0 0.7em;
+  font-size: 1em;
+  /* border-right: 1px dotted #607d8b; */
+  outline: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+.chat-window .chat-footer button {
+  border: 1;
+  display: grid;
+  place-items: center;
+  align-items: center;
+  cursor: pointer;
+  flex: 15%;
+  height: 43px;
+  background: rgb(195, 156, 128);
+  /* outline: #210404; */
+  color: rgb(19, 2, 2);
+}
+
+.chat-window .chat-footer button:hover {
+  color: #053907;
+}
+.hide {
+  opacity: 0 !important;
+}
+
+.message.sent {
+  background-color: #4CAF50; /* Green backgrosund for sent messages */
+  color: #fff; /* White text for sent messages */
+  animation: highlight 0.5s ease; /* Animation for highlighting */
+}
+
+@keyframes highlight {
+  from {
+    background-color: #4CAF50;
+  }
+  to {
+    background-color: transparent;
+  }
+}
